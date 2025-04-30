@@ -8,7 +8,7 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #ffffff;
+  --bg-color: #EEF1DA;
   --primary-color: #213448; 
   --secondary-color: #9e3609;
   --primary-shadow: #8b8eaf;
@@ -47,6 +47,7 @@ a:hover {
 
 body {
   font-family: var(--font-family);
+  background-color: var(--bg-color);
 }
 
 section {
@@ -96,7 +97,7 @@ nav ul li {
   color: var(--primary-color);
   font-size: 2rem;
   border: 0;
-  background-color: transparent;
+  background-color: transparent; 
   cursor: pointer;
   display: none;
 }
@@ -110,6 +111,7 @@ nav ul li {
   gap: 2.5rem;
   max-width: 68.75rem;
   margin: auto;
+  background-color: var(--bg-color);
 }
 
 .hero img {
@@ -245,6 +247,8 @@ nav ul li {
 .contact-form-container textarea {
   min-height: 6.25rem;
   font-size: 14px;
+  color: var(--primary-color);
+  
 }
 
 .contact-form-container .input-field {
@@ -256,18 +260,20 @@ nav ul li {
   border: 2px outset var(--primary-color);
   font-size: 0.875rem;
   outline: none;
+  background-color: var(--bg-color);
 }
 
 .input-field::placeholder {
   padding: 0.5rem;
-  color: var(--primary-color);
+  
+  background-color: #FBFBFB;
 }
 
 .submit-btn {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff;
+  background-color: #D5E5D5;
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   font-size: 1rem;
@@ -294,6 +300,7 @@ nav ul li {
 .socicon {
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
 }
 /* Social button ends */
 
@@ -322,7 +329,7 @@ footer {
 
 /* General (utilities) */
 .icon-card {
-  background-color: #547792;
+  background-color: #C7D9DD;
   border-radius: 11px;
   box-shadow: 0 3px 10px var(--secondary-shadow);
   padding: 20px;
