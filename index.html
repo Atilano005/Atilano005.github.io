@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <style>
+      #chartdiv {
+        width: 600px;
+        height: 400px;
+      }
+      </style>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icons/ICON.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/ICON.png"
+    />
+
+    <!-- Animate CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>A. Valero | Fullstack Dev </title>
+  </head>
+
+    <!-- Resources -->
+     
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="mapntime.js"></script> 
+    
+
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <h1>Atilano Valero</h1>
+      <ul class="navigation">
+        <li><a href="#about" class="nav-link">Hello World</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        
+         <!-- <li><a href="#projects" class="nav-link">A Bit More</a></li> -->
+        
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="burger-menu" id="burger-menu">
+        <ion-icon class="bars" name="menu-outline"></ion-icon>
+        <!-- <ion-icon class="times" name="close-outline"></ion-icon> -->
+      </button>
+    </nav>
+    
+    <p>  </p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <img
+        src="assets/images/macintosh.png"
+        alt="computer"
+        loading="lazy"
+        class="hero-img"
+      />
+      <div class="bio animate__animated animate__shakeX">
+        <h2 class="bio-title">Hi There</h2>
+        <p class="bio-text">
+          A few years back I started looking into web developing and figured out that it was
+          something I very much wanted to do. One of the things I read while I was at it was 
+          that having a personal page was a good way to really break in your newly acquired 
+          coding and programming skills.
+          So i gave it a go.
+        </p>
+      </div>
+    </section>
+
+    <!-- More about -->
+    <section class="more-about">
+      <h2>Several Iterations</h2>
+      <p>
+        
+      </p>
+      <p>
+        Of course this is not the first iteration of my own persnal page, and
+        so it is safe to say it wont be the last. Web developing feels to me like a 
+        process, it really never is done.
+      </p>
+      <p>
+        ¡And thast the good part!
+      </p>
+    </section>
+
+    <!-- Skills section -->
+    <section class="skills" id="skills">
+      <h2 class="skill-header">Some of the tools</h2>
+      <p>
+        There are a variety of tools I put to use in this page, and even more that I can work with
+        some of those include JavaScript and Ract; althouhg the latter is not being used in this page
+        (But it sure will be in the nex iteration).
+
+      </p>
+
+      <div class="skills-wrapper">
+        <div class="first-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-html-5.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-css3.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-javascript.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+        </div>
+
+        <div class="second-set animate__animated animate__pulse">
+          <img
+            src="assets/icons/icons8-bootstrap.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+          <img
+            src="assets/icons/icons8-react-native.svg"
+            alt=""
+            loading="lazy"
+            class="icon icon-card"
+          />
+         
+        </div>
+        
+      </div>
+    </section>
+
+
+    <!-- thanks for one Wolf Wortmann for the sticky list table thing. check hsi stuff out I guess?-->
+
+
+<div class='parent'>
+  <div class='child'><div id="chartdiv"> </div></div>
+  <div class='child'> 
+    <main class="st_viewport">
+      <div class="st_wrap_table" data-table_id="0">
+        <header class="st_table_header">
+          <h2>Americas</h2>
+          <div class="st_row">
+            <div class="st_column _rank">Location/City</div>
+            <div class="st_column _name">Curent Time (24h)</div>
+            <div class="st_column _surname">UTC Time Offset</div>
+
+            
+          </div>
+        </header>
+        <div class="st_table">
+         
+          <div class="st_row">
+            <div class="st_column _rank">New York</div>
+            <div class="st_column _name" id="newy"></div>
+            <div class="st_column _surname">UTC -5</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Los Angeles</div>
+            <div class="st_column _name" id="lax"></div>
+            <div class="st_column _surname">UTC -8</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Bogota</div>
+            <div class="st_column _name" id="bog"></div>
+            <div class="st_column _surname">UTC -5</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Mexico City</div>
+            <div class="st_column _name" id="mxc"></div>
+            <div class="st_column _surname">UTC -6</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Buenos Aires</div>
+            <div class="st_column _name" id="ba"></div>
+            <div class="st_column _surname">UTC -3</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Caracas</div>
+            <div class="st_column _name" id="ccs"></div>
+            <div class="st_column _surname">UTC +4</div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="st_wrap_table" data-table_id="1">
+        <header class="st_table_header">
+          <h2>Europe</h2>
+          <div class="st_row">
+            <div class="st_column _rank">Location</div>
+            <div class="st_column _name">Curent Time</div>
+            <div class="st_column _surname">UTC Offset</div>
+
+            
+          </div>
+        </header>
+        <div class="st_table">
+          <div class="st_row">
+            <div class="st_column _rank">Berlin</div>
+            <div class="st_column _name" id="ber"></div>
+            <div class="st_column _surname">UTC +1</div>
+            
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Amsterdam</div>
+            <div class="st_column _name" id="am"></div>
+            <div class="st_column _surname">UTC +1</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">London</div>
+            <div class="st_column _name" id="lon"></div>
+            <div class="st_column _surname">UTC +0</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Moscow</div>
+            <div class="st_column _name" id="mos"></div>
+            <div class="st_column _surname">UTC +3</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Madrid</div>
+            <div class="st_column _name" id="mad"></div>
+            <div class="st_column _surname">UTC +2</div>
+
+          </div>
+          
+          
+        </div>
+      </div>
+      <div class="st_wrap_table" data-table_id="3">
+        <header class="st_table_header">
+          <h2>Asia</h2>
+          <div class="st_row">
+            <div class="st_column _rank">Location</div>
+            <div class="st_column _name">Curent Time</div>
+            <div class="st_column _surname">UTC Offset</div>
+
+            
+          </div>
+        </header>
+        <div class="st_table">
+          <div class="st_row">
+            <div class="st_column _rank">Japan</div>
+            <div class="st_column _name" id="jp"></div>
+            <div class="st_column _surname">UTC +9</div>
+            
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Shanghai</div>
+            <div class="st_column _name" id="sh"></div>
+            <div class="st_column _surname">UTC +8</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Tel Aviv</div>
+            <div class="st_column _name" id="ta"></div>
+            <div class="st_column _surname">UTC +3</div>
+
+          </div>
+          <div class="st_row">
+            <div class="st_column _rank">Tehran</div>
+            <div class="st_column _name" id="te"></div>
+            <div class="st_column _surname">UTC +3</div>
+
+          </div>
+          
+         
+        </div>
+      </div>
+
+
+      
+
+
+</div>
+
+    
+
+    <!-- Projects section -->
+    <section class="projects" id="projects">
+      <h2 class="projects-title">Projects under my belt.</h2>
+      <div class="projects-container">
+        <div class="project-container project-card">
+          <img
+            src="assets/images/git4ants.jpg"
+            alt="expense-tracker"
+            loading="lazy"
+            class="project-pic"
+          />
+          <h3 class="project-title">Personal page.</h3>
+          <p class="project-details">
+            The very same you are on right now! just a simpla page that uses
+            some css, some javaScript, and makes a couple API calls. Nothign fancy
+            but it gets the point across. 
+          </p>
+          <a href="https://github.com/Atilano005" class="project-link">Check out the c0de!</a>
+        </div>
+        <div class="project-container project-card">
+          <img
+            src="assets/images/factu.jpg"
+            alt="netflic-clone"
+            loading="lazy"
+            class="project-pic"
+          />
+          <h3 class="project-title">Factumatico</h3>
+          <p class="project-details">
+            The very first program I wrote that actually does somethign useful. Not
+            a test, not a little fun, just purely for fucntion.
+          </p>
+          <a href="https://github.com/Atilano005" class="project-link">Check out the c0de!</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+      <h2>Get in touch!</h2>
+      <div class="contact-form-container">
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xbjnvdww" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="  Name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="  Your E-mail address (so that I can get back to you)"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="  Let me know"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              id="submit-btn"
+              class="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social accounts - Fixed to the right -->
+    <div class="socials">
+      <a href="https://linkedin.com/in/atilano005" target="_blank"
+        ><img
+          src="assets/icons/icons8-linkedin-circled.gif"
+          alt="Linkedin"
+          loading="lazy"
+          class="socicon"
+      /></a>
+      <a href="https://github.com/Atilano005" target="_blank"
+        ><img 
+          src="assets/icons/icons8-github.gif" 
+          alt="Github"
+          loading="lazy" 
+          class="socicon"
+      /></a>
+    </div>
+
+    <!-- Scroll to top -->
+    <i class="scroll-up" id="scroll-up"
+      ><img
+        src="assets/icons/icons8-upward-arrow.gif"
+        class="socicon up-arrow"
+        alt=""
+    /></i>
+
+    <!-- Footer section -->
+    <footer>
+      <p class="copy">&copy; Hello there handsome</p>
+      <p class="copy">
+        Built with &#x2661;
+        
+      
+      </p>
+    </footer>
+
+    <!-- Website scripts put them up or dnw i dunno -->
+    <script src="assets/js/app.js"></script>
+    <script src="mapntime.js"></script> 
+
+    <!-- Ion icons scripts -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
