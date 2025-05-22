@@ -23,7 +23,7 @@ const TE = 'https://timeapi.io/api/time/current/zone?timeZone=Asia%2FTehran';
 
 function fetchData() {
 
-  fetch(amsterdam,)
+  fetch(AM,)
 .then((response) => {
    return response.json();
  })
